@@ -23,7 +23,49 @@
 
             //function that plays a round of the game
             function playRound(playerSelection, computerSelection){
+                // to make the player selection case insensitive
+                let playerSelect = playerSelection.toLowerCase();
 
+                // determining the winner
+                switch(playerSelect){
+                    case "rock":
+                        if(computerSelection == "rock"){
+                            return "It's a Draw! You both picked Rock";
+                        }
+                        else if(computerSelection == "paper"){
+                            return "You Lose! Paper beats Rock";
+                        }
+                        else{
+                            return "You Win! Rock beats Scissors";
+                        }
+                        break;
+                    
+                    case "paper":
+                        if(computerSelection == "rock"){
+                            return "You Win! Paper beats Rock";
+                        }
+                        else if(computerSelection == "paper"){
+                            return "It's a Draw! You both picked Paper";
+                        }
+                        else{
+                            return "You Lose! Scissors beats Paper";
+                        }
+                        break;
+
+                    case "scissors":
+                        if(computerSelection == "rock"){
+                            return "You Lose! Rock beats Scissors";
+                        }
+                        else if(computerSelection == "paper"){
+                            return "It's Win! Scissors beats Paper";
+                        }
+                        else{
+                            return "It's a Draw! You both picked Scissors";
+                        }
+                        break;
+                }
+
+                
             }
 
         </script>
