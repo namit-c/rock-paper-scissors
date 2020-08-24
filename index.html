@@ -63,9 +63,26 @@
                             return "It's a Draw! You both picked Scissors";
                         }
                         break;
+                    default:
+                        return "Please enter either rock, paper, or scissors"
                 }
 
                 
+            }
+
+            //Function that plays the five rounds of the game
+            function game(){
+                //Initializing the scores of the player and computer
+                let scorePlayer = 0;
+                let scoreComp = 0;
+
+                //const for the number of rounds
+                const totalRounds = 5;
+
+                //loop for five rounds
+                for(let round = 0; round < totalRounds; round++){
+                    let playerPick = prompt("Select either rock, paper, or scissors");
+                }
             }
 
         </script>
