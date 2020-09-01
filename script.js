@@ -1,8 +1,66 @@
 //Global variables
 let scorePlayer = 0;
 let scoreComp = 0;
+let currentRound = 0;
+const totalRounds = 5;
+let gameOver = false;
 
 
+//Display for score and results
+let playerScore = document.querySelector(".player-score");
+playerScore.style.cssText = "float: left";
+
+let compScore = document.querySelector(".computer-score");
+compScore.style.cssText = "float: right";
+
+let roundResult = document.querySelector(".round-results");
+roundResult.style.cssText = "float: center";
+
+
+
+//Connecting the buttons to the playerSelection
+const selectButtons = document.querySelector(".buttons");
+selectButtons.style.cssText = "text-align: center";
+selectButtons.addEventListener("click", function(e){
+    
+    //only play round if the game isn't over
+    if(!gameOver){
+        let selection = e.target.textContent;
+        let winner = playRound(selection, computerPlay());
+        
+        currentRound++;
+        console.log(currentRound);
+        //checking for who won (if "win" is in the message, then player wins and vice-versa)
+        if(winner.includes("Win")){
+            scorePlayer++;
+        }
+        else if(winner.includes("Lose")){
+            scoreComp++;
+        }
+
+        //Updating the scores
+            playerScore.textContent = "Player Score: " + scorePlayer;
+            compScore.textContent = "Computer Score: " + scoreComp;
+            roundResult.textContent = winner;
+    }
+
+    if (gameOver == false && currentRound >= 5){
+        //checking who won the game
+        if(scorePlayer > scoreComp){
+            console.log("You Win! You won " + scorePlayer + " rounds and the computer only won " + scoreComp);
+        }
+        else if (scorePlayer < scoreComp){
+            console.log("You Lose! The computer won " + scoreComp + " rounds and you only won " + scorePlayer);
+        }
+        else{
+            console.log("It's a Draw! Both won " + scorePlayer + " rounds!")
+        }
+        gameOver = true;
+    }
+    else{
+        return;
+    }
+});
 
 //computer choosing rock, paper, or scissors
 function computerPlay(){
@@ -68,30 +126,6 @@ function playRound(playerSelection, computerSelection){
 
     
 }
-
-//Connecting the buttons to the playerSelection
-const selectButtons = document.querySelector(".buttons");
-selectButtons.style.cssText = "text-align: center";
-selectButtons.addEventListener("click", function(e){
-    let selection = e.target.textContent;
-    alert(playRound(selection, computerPlay()));
-});
-
-//Score and results
-const results = document.querySelector(".results");
-let playerScore = document.createElement("h3");
-playerScore.classList.add("player-score");
-playerScore.textContent = "Score: " + scorePlayer;
-playerScore.style.cssText = "float: left";
-
-let compScore = document.createElement("h3");
-compScore.classList.add("computer-score");
-compScore.textContent = "Computer Score: " + scoreComp;
-compScore.style.cssText = "float: right";
-
-results.append(playerScore, compScore);
-
-
 
 
 
