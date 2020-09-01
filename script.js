@@ -1,3 +1,9 @@
+//Global variables
+let scorePlayer = 0;
+let scoreComp = 0;
+
+
+
 //computer choosing rock, paper, or scissors
 function computerPlay(){
     let pick = Math.random();
@@ -15,9 +21,8 @@ function computerPlay(){
 }
 
 //function that plays a round of the game
-function playRound(computerSelection){
-    // to make the player selection case insensitive
-    let playerPick = prompt("Select either rock, paper, or scissors");
+function playRound(playerSelection, computerSelection){
+    // to make the playerselection case insensitive
     let playerSelect = playerSelection.toLowerCase();
 
     // determining the winner
@@ -63,6 +68,33 @@ function playRound(computerSelection){
 
     
 }
+
+//Connecting the buttons to the playerSelection
+const selectButtons = document.querySelector(".buttons");
+selectButtons.style.cssText = "text-align: center";
+selectButtons.addEventListener("click", function(e){
+    let selection = e.target.textContent;
+    alert(playRound(selection, computerPlay()));
+});
+
+//Score and results
+const results = document.querySelector(".results");
+let playerScore = document.createElement("h3");
+playerScore.classList.add("player-score");
+playerScore.textContent = "Score: " + scorePlayer;
+playerScore.style.cssText = "float: left";
+
+let compScore = document.createElement("h3");
+compScore.classList.add("computer-score");
+compScore.textContent = "Computer Score: " + scoreComp;
+compScore.style.cssText = "float: right";
+
+results.append(playerScore, compScore);
+
+
+
+
+
 
 /* //Function that plays the five rounds of the game
 function game(){
