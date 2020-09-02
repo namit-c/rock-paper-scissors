@@ -1,18 +1,18 @@
 //Global variables
 let scorePlayer = 0;
 let scoreComp = 0;
+let numTies = 0;
 let gameOver = false;
 
 
 //Display for score and results
 let playerScore = document.querySelector(".player-score");
-playerScore.style.cssText = "float: left";
 
 let compScore = document.querySelector(".computer-score");
-compScore.style.cssText = "float: right";
+
+let ties = document.querySelector(".tie");
 
 let roundResult = document.querySelector(".round-results");
-roundResult.style.cssText = "float: center";
 
 
 //Connecting the buttons to the playerSelection
@@ -32,11 +32,17 @@ selectButtons.addEventListener("click", function(e){
         else if(winner.includes("Lose")){
             scoreComp++;
         }
+        else{
+            numTies++;
+        }
 
         //Updating the scores
-            playerScore.textContent = "Player Score: " + scorePlayer;
-            compScore.textContent = "Computer Score: " + scoreComp;
+            playerScore.textContent = "PLAYER: " + scorePlayer;
+            compScore.textContent = "COMPUTER: " + scoreComp;
+            ties.textContent = "TIES: " + numTies;
+
             roundResult.textContent = winner;
+            roundResult.style.cssText = "opacity: 1";
     }
 
     if (gameOver == false && ((scorePlayer >= 5) || (scoreComp >= 5))){
