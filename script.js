@@ -15,7 +15,6 @@ let roundResult = document.querySelector(".round-results");
 roundResult.style.cssText = "float: center";
 
 
-
 //Connecting the buttons to the playerSelection
 const selectButtons = document.querySelector(".buttons");
 selectButtons.style.cssText = "text-align: center";
@@ -40,7 +39,7 @@ selectButtons.addEventListener("click", function(e){
             roundResult.textContent = winner;
     }
 
-    if (gameOver == false && (scorePlayer >= 5 || compScore >= 5)){
+    if (gameOver == false && ((scorePlayer >= 5) || (scoreComp >= 5))){
         //checking who won the game
         if(scorePlayer > scoreComp){
             console.log("You Win! You won " + scorePlayer + " rounds and the computer only won " + scoreComp);
@@ -49,7 +48,7 @@ selectButtons.addEventListener("click", function(e){
             console.log("You Lose! The computer won " + scoreComp + " rounds and you only won " + scorePlayer);
         }
         else{
-            console.log("It's a Draw! Both won " + scorePlayer + " rounds!")
+            console.log("It's a Draw! Both won " + scorePlayer + " rounds!");
         }
         gameOver = true;
     }
