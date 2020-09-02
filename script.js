@@ -1,8 +1,6 @@
 //Global variables
 let scorePlayer = 0;
 let scoreComp = 0;
-let currentRound = 0;
-const totalRounds = 5;
 let gameOver = false;
 
 
@@ -28,8 +26,6 @@ selectButtons.addEventListener("click", function(e){
         let selection = e.target.textContent;
         let winner = playRound(selection, computerPlay());
         
-        currentRound++;
-        console.log(currentRound);
         //checking for who won (if "win" is in the message, then player wins and vice-versa)
         if(winner.includes("Win")){
             scorePlayer++;
@@ -44,7 +40,7 @@ selectButtons.addEventListener("click", function(e){
             roundResult.textContent = winner;
     }
 
-    if (gameOver == false && currentRound >= 5){
+    if (gameOver == false && (scorePlayer >= 5 || compScore >= 5)){
         //checking who won the game
         if(scorePlayer > scoreComp){
             console.log("You Win! You won " + scorePlayer + " rounds and the computer only won " + scoreComp);
