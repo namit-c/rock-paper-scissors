@@ -16,8 +16,7 @@ let roundResult = document.querySelector(".round-results");
 
 
 //Connecting the buttons to the playerSelection
-const selectButtons = document.querySelector(".buttons");
-selectButtons.style.cssText = "text-align: center";
+const selectButtons = document.querySelector(".button-group");
 selectButtons.addEventListener("click", function(e){
     
     //only play round if the game isn't over
