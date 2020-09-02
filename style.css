@@ -5,12 +5,12 @@ body{
 }
 
 .title{
-    font-weight: 100;
-    font-size: 3em;
+    font-weight: lighter;
+    font-size: 2em;
     text-align: center;
-    background-color: #f3f3f3;
+    color: #15aaf3cf;
     padding: 20px;
-    margin: -8px 0 0 -8px;
+    margin: 10px 0 0 -8px;
     width: 100%;
 }
 
@@ -18,7 +18,7 @@ body{
     display: flex;
     justify-content: space-around;
     list-style: none;
-    color: #39b19094;
+    color: #3e3e3e;
 }
 
 .round-results{
