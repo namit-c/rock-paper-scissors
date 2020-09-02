@@ -1,0 +1,27 @@
+body{
+    background-color: white;
+    font-family: Noto Sans, sans-serif;
+
+}
+
+.title{
+    font-weight: 100;
+    font-size: 3em;
+    text-align: center;
+    background-color: #f3f3f3;
+    padding: 20px;
+    margin: -8px 0 0 -8px;
+    width: 100%;
+}
+
+.score{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    color: #39b19094;
+}
+
+.round-results{
+    text-align: center;
+    opacity: 0;
+}
