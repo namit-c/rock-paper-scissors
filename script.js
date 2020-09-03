@@ -21,9 +21,9 @@ selectButtons.addEventListener("click", function(e){
     
     //only play round if the game isn't over
     if(!gameOver){
-        let selection = e.target.textContent;
+        let selection = e.target.id;
         let winner = playRound(selection, computerPlay());
-        
+
         //checking for who won (if "win" is in the message, then player wins and vice-versa)
         if(winner.includes("Win")){
             scorePlayer++;
@@ -31,7 +31,7 @@ selectButtons.addEventListener("click", function(e){
         else if(winner.includes("Lose")){
             scoreComp++;
         }
-        else{
+        else if (winner.includes("Draw")){
             numTies++;
         }
 
