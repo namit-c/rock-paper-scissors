@@ -1,2 +1,2 @@
 # Overview
-The repository consists of the game rock-paper-scissors made using javascipt. As this is my first project is javascipt, it is good opportunity for me to strengthen my knowledge of the basics.
+The repository consists of the game rock-paper-scissors made using javascipt. This projects consists of making the logic of the game in javascript as well as learning to use event listeners. The front end is made using HTML, CSS, and Javascript.
