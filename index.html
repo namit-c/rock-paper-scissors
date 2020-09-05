@@ -12,24 +12,28 @@
             <div class="main-components">
                 <h1 class="title">Rock Paper Scissors</h1>
                 <div class="game-components">
-                    <ul class="score">
-                        <li class="player-score">PLAYER: 0</li>
-                        <li class="tie">TIES: 0</li>
-                        <li class="computer-score">COMPUTER: 0</li>
+                    <ul class="score-board">
+                        <li class="player-score score-components">
+                            <p class="score-category">PLAYER</p><br>
+                            <p class="score" id="player-score">0</p>
+                        </li>
+                        <li class="tie score-components">
+                            <p class="score-category">TIES</p><br>
+                            <p class="score" id=ties>0</p>
+                        </li>
+                        <li class="computer-score score-components">
+                            <p class="score-category">COMPUTER</p><br>
+                            <p class="score" id="computer-score">0</p>
+                        </li>
                     </ul>
-                    <div class="round-results">Random</div>
+                    <div class="round-results">To Play: Choose Rock, Paper, or Scissors</div>
                     <div class ="button-group">
                         <button type="button"><img id="rock" class="button" src="rock.png" height="75px" width="75px"></button>
                         <button type="button"><img id="paper" class="button" src="paper.png" width="75px" height="75px"></button>
                         <button type="button"><img id="scissors" class="button" src="scissors.png" width="75px" height="75px"></button>
                     </div>
                 </div>
-                <!--Making the modal to popup when the game end-->
-                <div class="popup">
-                    <div class="popup-content">
-                        <!--<span class="close">&times;</span>-->
-                    </div>
-                </div>
+                <button type="button" id="reset">Play Again</button>
             </div>
             <div class="right-box"></div>
         </div>  
