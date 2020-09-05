@@ -11,20 +11,19 @@ html, body{
 }
 
 .left-box{
-    flex-grow: 1;
+    flex: 1;
     background-image: linear-gradient(-90deg, rgba(0,83,129,1) 0%, rgba(61,184,255,1) 100%);
-
 }
 
 
 .main-components{
     background-color: white;
-    width: 1000px;
+    width: 900px;
 }
 
 
 .right-box{
-    flex-grow: 1;
+    flex: 1;
     background-image: linear-gradient(90deg, rgba(0,83,129,1) 0%, rgba(61,184,255,1) 100%);
 }
 
@@ -76,7 +75,7 @@ html, body{
 
 .round-results{
     text-align: center;
-    padding: 60px;
+    padding: 30px 60px 30px 60px;
     font-size: 25px;
     font-weight: 500;
     color: #005381;
@@ -124,10 +123,26 @@ button:focus{
 }
 
 #reset{
-    background-color: lightgray;
-    border-radius: 0;
+    background-color: #2e9cf5;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 20px 10px 20px;
+    border: 1px solid transparent;
+    margin-top: 0px;
+    margin-left: 35px;
+    margin: 0px auto 10px 35px;
+}
+
+#reset:hover{
+    background-color: #165481;
+    cursor: pointer;
 }
 
 #reset:focus{
-    outline: -webkit-focus-ring-color auto 1px;
+    outline: none;
+}
+
+#reset:active{
+    border: 1px solid black;
+    box-shadow: 0 2px 2px 0 rgba(0, 101, 196, 0.3);
 }
