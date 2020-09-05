@@ -6,11 +6,11 @@ let gameOver = false;
 
 
 //Display for score and results
-let playerScore = document.querySelector(".player-score");
+let playerScore = document.querySelector("#player-score");
 
-let compScore = document.querySelector(".computer-score");
+let compScore = document.querySelector("#computer-score");
 
-let ties = document.querySelector(".tie");
+let ties = document.querySelector("#ties");
 
 let roundResult = document.querySelector(".round-results");
 
@@ -36,24 +36,23 @@ selectButtons.addEventListener("click", function(e){
         }
 
         //Updating the scores
-            playerScore.textContent = "PLAYER: " + scorePlayer;
-            compScore.textContent = "COMPUTER: " + scoreComp;
-            ties.textContent = "TIES: " + numTies;
-
-            roundResult.textContent = winner;
-            roundResult.style.cssText = "opacity: 1";
+        playerScore.textContent = scorePlayer.toString();
+        compScore.textContent = scoreComp.toString();
+        ties.textContent = numTies.toString();
+        
+        roundResult.textContent = winner;
     }
 
     if (gameOver == false && ((scorePlayer >= 5) || (scoreComp >= 5))){
         //checking who won the game
         if(scorePlayer > scoreComp){
-            console.log("You Win! You won " + scorePlayer + " rounds and the computer only won " + scoreComp);
+            roundResult.textContent += "\nYou Win! You won " + scorePlayer + " rounds and the computer only won " + scoreComp;
         }
         else if (scorePlayer < scoreComp){
-            console.log("You Lose! The computer won " + scoreComp + " rounds and you only won " + scorePlayer);
+            roundResult.textContent += "\nYou Lose! The computer won " + scoreComp + " rounds and you only won " + scorePlayer;
         }
         else{
-            console.log("It's a Draw! Both won " + scorePlayer + " rounds!");
+            roundResult.textContent +=  "\nIt's a Draw! Both won " + scorePlayer + " rounds!";
         }
         gameOver = true;
     }
@@ -114,7 +113,7 @@ function playRound(playerSelection, computerSelection){
                 return "You Lose! Rock beats Scissors";
             }
             else if(computerSelection == "paper"){
-                return "It's Win! Scissors beats Paper";
+                return "You Win! Scissors beats Paper";
             }
             else{
                 return "It's a Draw! You both picked Scissors";
