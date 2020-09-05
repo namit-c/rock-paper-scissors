@@ -46,19 +46,35 @@ selectButtons.addEventListener("click", function(e){
     if (gameOver == false && ((scorePlayer >= 5) || (scoreComp >= 5))){
         //checking who won the game
         if(scorePlayer > scoreComp){
-            roundResult.textContent += "\nYou Win! You won " + scorePlayer + " rounds and the computer only won " + scoreComp;
+            roundResult.textContent = "Player Wins! You won " + scorePlayer + " rounds and the computer won " + scoreComp;
         }
         else if (scorePlayer < scoreComp){
-            roundResult.textContent += "\nYou Lose! The computer won " + scoreComp + " rounds and you only won " + scorePlayer;
+            roundResult.textContent = "Computer Wins! The computer won " + scoreComp + " rounds and you won " + scorePlayer;
         }
         else{
-            roundResult.textContent +=  "\nIt's a Draw! Both won " + scorePlayer + " rounds!";
+            roundResult.textContent =  "\nIt's a Draw! Both won " + scorePlayer + " rounds!";
         }
         gameOver = true;
     }
     else{
         return;
     }
+});
+
+//Play Again button
+const reset = document.querySelector("#reset");
+reset.addEventListener("click", function(e){
+    scorePlayer = 0;
+    scoreComp = 0;
+    numTies = 0;
+    gameOver = false;
+
+    playerScore.textContent = scorePlayer.toString();
+    compScore.textContent = scoreComp.toString();
+    ties.textContent = numTies.toString();
+
+    roundResult.textContent = "To Play: Choose Rock, Paper, or Scissors";
+
 });
 
 //computer choosing rock, paper, or scissors
@@ -126,43 +142,3 @@ function playRound(playerSelection, computerSelection){
     
 }
 
-
-
-
-/* //Function that plays the five rounds of the game
-function game(){
-    //Initializing the scores of the player and computer
-    let scorePlayer = 0;
-    let scoreComp = 0;
-
-    //const for the number of rounds
-    const totalRounds = 5;
-
-    //loop for five rounds
-    for(let round = 0; round < totalRounds; round++){
-        
-        let winner = playRound(computerPlay());
-
-        //checking for who won (if "win" is in the message, then player wins and vice-versa)
-        if(winner.includes("Win")){
-            scorePlayer++;
-        }
-        else if(winner.includes("Lose")){
-            scoreComp++;
-        }
-
-        console.log(winner);
-    }
-
-    //checking who won the game
-    if(scorePlayer > scoreComp){
-        console.log("You Win! You won " + scorePlayer + " rounds and the computer only won " + scoreComp);
-    }
-    else if (scorePlayer < scoreComp){
-        console.log("You Lose! The computer won " + scoreComp + " rounds and you only won " + scorePlayer);
-    }
-    else{
-        console.log("It's a Draw! Both won " + scorePlayer + " rounds!")
-    }
-}
- */
