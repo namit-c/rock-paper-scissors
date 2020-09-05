@@ -46,20 +46,40 @@ html, body{
     border-radius: 10px;
 }
 
-.score{
+.score-board{
     display: flex;
     justify-content: space-around;
+    padding-left: 0;
     list-style: none;
     color: #3e3e3e;
 }
 
+.score-components{
+    width: 120px;
+    text-align: center;
+}
+
+.score-category{
+    margin-bottom: 0;
+    font-size: 14px;
+    letter-spacing: 5px;
+    color: #005381;
+}
+
+.score{
+    margin-top: 0;
+    color: black;
+    font-size: 35px;
+    font-weight: 340;
+    padding-top: 0;
+}
+
 .round-results{
     text-align: center;
-    opacity: 0;
     padding: 60px;
     font-size: 25px;
     font-weight: 500;
-    color: #0a6395;
+    color: #005381;
 }
 
 img{
@@ -69,6 +89,7 @@ img{
 .button-group{
     text-align: center;
     justify-content: center;
+    margin-top: 16px;
 }
 
 button{
@@ -80,6 +101,7 @@ button{
 
 .button{
     border: 2px solid transparent;
+    margin: 55px;
 }
 
 .button:hover{
@@ -99,4 +121,13 @@ button:focus{
     box-shadow: 0 2px 2px 0 rgba(0, 101, 196, 0.3);
     height: 74px;
     width: 74px;
+}
+
+#reset{
+    background-color: lightgray;
+    border-radius: 0;
+}
+
+#reset:focus{
+    outline: -webkit-focus-ring-color auto 1px;
 }
